@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mivida Park Apartment</title>
+    <link rel="stylesheet" href="property-styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const typeSelect = document.getElementById('type');
+            const detailsDiv = document.getElementById('details');
+            
+            const propertyDetails = {
+                'Type 1': '200 Sqm 3BDS - Least Price In Mivida 15.5 M Cash'
+            };
+
+            typeSelect.addEventListener('change', function() {
+                const selectedType = typeSelect.value;
+
+                if (selectedType) {
+                    detailsDiv.innerHTML = propertyDetails[selectedType];
+                } else {
+                    detailsDiv.innerHTML = '';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mivida Park Apartment</h1>
+        <form id="propertyForm">
+            <label for="type">Choose Type:</label>
+            <select id="type" required>
+                <option value="">--Choose a type--</option>
+                <option value="Type 1">Type 1</option>
+            </select>
+
+            <label for="details">Details:</label>
+            <div id="details"></div>
+        </form>
+    </div>
+</body>
+</html>
